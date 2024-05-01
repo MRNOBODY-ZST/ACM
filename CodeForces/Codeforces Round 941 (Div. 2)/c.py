@@ -2,13 +2,20 @@ t = int(input())
 
 for _ in range(t):
     n = input()
-    a = list(set(map(int, input().split())))
+    a = list(map(int, input().split()))
     a.sort()
-    cnt = 0
-    for i in range(len(a)-1):
-        if a[i]+1 == a[i+1]:
-            cnt+=1
-    if cnt%2 == 0:
-        print('Alice')
+    mexsize = 1
+    maxsize = max(a)
+    for i in range(len(a)):
+        if a[i] == i:
+            mexsize += 1
+    if mexsize > maxsize:
+        if maxsize % 2 == 1:
+            print("Alice")
+        else:
+            print("Bob")
     else:
-        print('Bob')
+        if mexsize % 2 == 1:
+            print("Alice")
+        else:
+            print("Bob")
