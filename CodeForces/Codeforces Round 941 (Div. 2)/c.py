@@ -6,11 +6,11 @@ for _ in range(t):
     a.sort()
     mexsize = 1
     maxsize = max(a)
-    for i in range(len(a)):
-        if a[i] == i:
-            mexsize += 1
+    for num in a:
+        if num == mexsize:
+            mexsize = mexsize + 1
     if mexsize > maxsize:
-        if maxsize % 2 == 1:
+        if maxsize %2 == 1:
             print("Alice")
         else:
             print("Bob")
